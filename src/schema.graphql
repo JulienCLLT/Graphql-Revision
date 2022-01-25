@@ -1,0 +1,19 @@
+type Query {
+    hello(name: String) :String!
+    getTodos: [Todo]!
+    getTodoById(id: Int): Todo!
+  }
+
+  enum TodoSatusEnum {
+    WAITING
+    IN_PROGRESS
+    CANCELED
+    DONE
+  }
+
+  type Todo {
+    id: ID!
+    name: String!
+    content: String!
+    status: TodoSatusEnum
+  }
