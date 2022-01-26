@@ -2,6 +2,7 @@ type Query {
     hello(name: String) :String!
     getTodos: [Todo]!
     getTodoById(id: Int): Todo!
+    getUserId(id: Int):User!
   }
 
   enum TodoSatusEnum {
@@ -15,5 +16,14 @@ type Query {
     id: ID!
     name: String!
     content: String!
-    status: TodoSatusEnum
+    status: TodoSatusEnum!
+    user: User!
   }
+
+  type User {
+    id: ID!
+    name: String!
+    email: String!
+    todos: [Todo]!
+  }
+
