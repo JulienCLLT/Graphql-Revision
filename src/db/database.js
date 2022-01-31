@@ -1,4 +1,4 @@
-const data = {
+export const data = {
     todos:[
         { 
            id : 1,
@@ -43,5 +43,3 @@ const data = {
        },
     ]
 };
-
-module.exports=data;
