@@ -1,10 +1,14 @@
 const { GraphQLServer } = require("graphql-yoga");
 const resolvers = require("./resolver/resolvers");
+const database = require('./db/database.js');
 
 
 const server = new GraphQLServer({
   typeDefs: "src/schema.graphql",
-  resolvers
+  resolvers,
+  context: {
+    database //le context permet de simlifier l'appel à la bdd en evité de l'import dans chaque resolvers
+  }
 });
 
 server.start(() =>

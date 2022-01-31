@@ -1,4 +1,4 @@
-const  database  = require('../db/database.js');
+// const  database  = require('../db/database.js');
 
 const resolversQuery = {
   Query: {
@@ -13,7 +13,7 @@ const resolversQuery = {
       return database.todos
     },
 
-    getTodoById (parent, {id} ,context, info)  {
+    getTodoById (parent, {id} ,{database}, info)  {
       const todo = database.todos.find((todo)=>todo.id === id);
         if (!todo) {
           throw new Error(`la todo d'id ${id} n'éxiste pas.`);
@@ -21,7 +21,7 @@ const resolversQuery = {
         return todo;
     },
 
-    getUserId (parent, {id}, context, info) {
+    getUserId (parent, {id}, {database}, info) {
       const user = database.users.find((user)=> user.id === id);
       return user;
     },
@@ -30,7 +30,7 @@ const resolversQuery = {
 
 
 Todo :{
-  user: ({userId}, args ,context, info) => {
+  user: ({userId}, args ,{database}, info) => {
     const userArray =  database.users.find((user)=> user.id === userId);
     
     return userArray;
@@ -38,7 +38,7 @@ Todo :{
 },
 
 User: {
-  todos: ({id}, args, context, info) => {
+  todos: ({id}, args, {database}, info) => {
     return database.todos.filter((todo)=> todo.userId === id);
   }
 },

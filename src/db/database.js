@@ -11,7 +11,7 @@ const data = {
             id : 2,
             name : 'Week-end',
             content : "Entamer la partie de Snowrunner",
-            status : 'IN_PROGESS',
+            status : 'IN_PROGRESS',
             userId: 2
          },
          { 

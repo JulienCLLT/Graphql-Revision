@@ -24,6 +24,6 @@ type Query {
     id: ID!
     name: String!
     email: String!
-    todos: [Todo]!
+    todos: [Todo]
   }
 
