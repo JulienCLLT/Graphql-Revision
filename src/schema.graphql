@@ -27,3 +27,7 @@ type Query {
     todos: [Todo]
   }
 
+  type Mutation {
+    addTodo(name: String!, content: String!, userId: Int!): Todo!
+  }
+

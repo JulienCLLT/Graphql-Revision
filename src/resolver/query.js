@@ -3,7 +3,7 @@
 export const Query = {
     hello: (_, {name}) => `Hello ${name || "World"}`,
 
-    getTodos: (parent, args ,context, info) => {
+    getTodos: (parent, args ,{data}, info) => {
       // console.log(parent);
       // console.log(args);
       // console.log(context);
