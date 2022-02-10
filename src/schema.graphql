@@ -28,6 +28,23 @@ type Query {
   }
 
   type Mutation {
-    addTodo(name: String!, content: String!, userId: Int!): Todo!
+    addTodo(TodoAddInput: TodoAddInput): Todo!
+    updateTodo( id: Int!, updateTodoInput: updateTodoInput): Todo!
+    deleteTodo( id: Int!):Todo!
   }
+
+  input TodoAddInput {
+    name: String!
+    content: String!
+    userId: Int! 
+  }
+
+  input updateTodoInput {
+    name: String
+    content: String
+    userId: Int
+    status: TodoSatusEnum
+  }
+
+
 
